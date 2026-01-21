@@ -7,23 +7,20 @@ type MemberTableProps = {
   searchTerm: string;
   sortKey: "name" | "role" | "email" | null;
   sortOrder: "asc" | "desc";
+  statusFilter: string[];
+  teamFilter: string[];
 };
 
 const ITEMS_PER_PAGE = 10;
 
-const STATUS_OPTIONS = [
-  "Active",
-  "Inactive",
-  "Busy",
-  "On Leave",
-  "Away",
-  "Do Not Disturb",
-];
+const STATUS_OPTIONS = ["Active", "Inactive", "Busy", "On Leave"];
 
 export default function MemberTable({
   searchTerm,
   sortKey,
   sortOrder,
+  statusFilter,
+  teamFilter,
 }: MemberTableProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedIds, setSelectedIds] = useState<number[]>([]);
@@ -39,11 +36,19 @@ export default function MemberTable({
   const filteredMembers = teamMembers.filter((user) => {
     const term = searchTerm.toLowerCase();
 
-    return (
+    const matchesSearch =
       user.name.toLowerCase().includes(term) ||
       user.username.toLowerCase().includes(term) ||
-      user.email.toLowerCase().includes(term)
-    );
+      user.email.toLowerCase().includes(term);
+
+    const matchesStatus =
+      statusFilter.length === 0 ||
+      statusFilter.some((st) => user.status.includes(st));
+
+    const matchesTeam =
+      teamFilter.length === 0 || teamFilter.some((t) => user.teams.includes(t));
+
+    return matchesSearch && matchesStatus && matchesTeam;
   });
 
   const sortedMembers = [...filteredMembers].sort((a, b) => {

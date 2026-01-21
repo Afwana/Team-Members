@@ -9,6 +9,8 @@ export default function App() {
     null,
   );
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("asc");
+  const [statusFilter, setStatusFilter] = useState<string[]>([]);
+  const [teamFilter, setTeamFilter] = useState<string[]>([]);
 
   const handleSort = (key: "name" | "role" | "email") => {
     if (sortKey === key) {
@@ -25,11 +27,17 @@ export default function App() {
         searchTerm={searchTerm}
         onSearchChange={setSearchTerm}
         onSort={handleSort}
+        statusFilter={statusFilter}
+        teamFilter={teamFilter}
+        setStatusFilter={setStatusFilter}
+        setTeamFilter={setTeamFilter}
       />
       <MemberTable
         searchTerm={searchTerm}
         sortKey={sortKey}
         sortOrder={sortOrder}
+        statusFilter={statusFilter}
+        teamFilter={teamFilter}
       />
     </div>
   );
