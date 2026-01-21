@@ -1,0 +1,133 @@
+export interface TeamMember {
+  id: number;
+  name: string;
+  username: string;
+  avatar: string;
+  status: string[];
+  role: string;
+  email: string;
+  teams: string[];
+}
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: 1,
+    name: "Olivia Rhye",
+    username: "@olivia",
+    avatar: "https://i.pravatar.cc/40?img=1",
+    status: ["Inactive", "On Leave"],
+    role: "Product Designer",
+    email: "olivia@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 2,
+    name: "Phoenix Baker",
+    username: "@phoenix",
+    avatar: "https://i.pravatar.cc/40?img=2",
+    status: ["Active", "Busy"],
+    role: "Product Manager",
+    email: "phoenix@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 3,
+    name: "Lana Steiner",
+    username: "@lana",
+    avatar: "https://i.pravatar.cc/40?img=3",
+    status: ["Active"],
+    role: "Frontend Developer",
+    email: "lana@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 4,
+    name: "Olivia Rhye",
+    username: "@olivia",
+    avatar: "https://i.pravatar.cc/40?img=1",
+    status: ["Inactive", "On Leave"],
+    role: "Product Designer",
+    email: "olivia@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 5,
+    name: "Phoenix Baker",
+    username: "@phoenix",
+    avatar: "https://i.pravatar.cc/40?img=2",
+    status: ["Active", "Busy"],
+    role: "Product Manager",
+    email: "phoenix@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 6,
+    name: "Lana Steiner",
+    username: "@lana",
+    avatar: "https://i.pravatar.cc/40?img=3",
+    status: ["Active"],
+    role: "Frontend Developer",
+    email: "lana@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 7,
+    name: "Olivia Rhye",
+    username: "@olivia",
+    avatar: "https://i.pravatar.cc/40?img=1",
+    status: ["Inactive", "On Leave"],
+    role: "Product Designer",
+    email: "olivia@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 8,
+    name: "Phoenix Baker",
+    username: "@phoenix",
+    avatar: "https://i.pravatar.cc/40?img=2",
+    status: ["Active", "Busy"],
+    role: "Product Manager",
+    email: "phoenix@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 9,
+    name: "Lana Steiner",
+    username: "@lana",
+    avatar: "https://i.pravatar.cc/40?img=3",
+    status: ["Active"],
+    role: "Frontend Developer",
+    email: "lana@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 10,
+    name: "Olivia Rhye",
+    username: "@olivia",
+    avatar: "https://i.pravatar.cc/40?img=1",
+    status: ["Inactive", "On Leave"],
+    role: "Product Designer",
+    email: "olivia@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 11,
+    name: "Phoenix Baker",
+    username: "@phoenix",
+    avatar: "https://i.pravatar.cc/40?img=2",
+    status: ["Active", "Busy"],
+    role: "Product Manager",
+    email: "phoenix@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+  {
+    id: 12,
+    name: "Lana Steiner",
+    username: "@lana",
+    avatar: "https://i.pravatar.cc/40?img=3",
+    status: ["Active"],
+    role: "Frontend Developer",
+    email: "lana@untitledui.com",
+    teams: ["Design", "Product", "Marketing", "+4"],
+  },
+];

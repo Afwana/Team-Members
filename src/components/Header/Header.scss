@@ -1,0 +1,167 @@
+.team-header {
+  background: #ffffff;
+
+  &__main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #111827;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: #6b7280;
+    font-size: 20px;
+    cursor: pointer;
+
+    svg:hover {
+      color: #111827;
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #4ade80;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+}
+
+.sub-header {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 12px;
+  padding: 0 20px 0 20px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  width: 320px;
+  color: #9ca3af;
+
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #111827;
+
+    &::placeholder {
+      color: #9ca3af;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+
+    svg {
+      font-size: 16px;
+    }
+
+    &:hover {
+      background: #f9fafb;
+    }
+  }
+}
+
+// Tablet
+@media (max-width: 1024px) {
+  .search-box {
+    width: 260px;
+  }
+
+  .team-header__icons {
+    gap: 14px;
+    font-size: 18px;
+  }
+}
+
+// mobile
+@media (max-width: 768px) {
+  .team-header {
+    padding: 16px;
+
+    &__main {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .team-header__icons {
+    align-self: flex-end;
+  }
+
+  .sub-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}
+
+// small
+@media (max-width: 480px) {
+  .team-header__icons {
+    font-size: 16px;
+    gap: 10px;
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      font-size: 13px;
+    }
+  }
+
+  .actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}

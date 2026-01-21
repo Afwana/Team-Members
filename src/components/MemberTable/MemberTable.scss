@@ -1,0 +1,262 @@
+.team-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px;
+}
+
+.team-table {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 900px;
+  }
+
+  th,
+  td {
+    padding: 14px 16px;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+    color: #374151;
+    white-space: nowrap;
+  }
+
+  th {
+    background: #f9fafb;
+    font-weight: 500;
+    color: #6b7280;
+  }
+
+  .th-name {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  .name {
+    font-weight: 500;
+    color: #111827;
+  }
+
+  span {
+    font-size: 12px;
+    color: #6b7280;
+  }
+}
+
+.status-cell {
+  position: relative;
+}
+
+.status {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.popup-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  cursor: pointer;
+
+  &.selected {
+    background: #f3f4f6;
+    font-weight: 500;
+  }
+
+  &:hover {
+    background: #f9fafb;
+  }
+
+  input {
+    pointer-events: none;
+  }
+}
+
+.status-add {
+  border: 1px dashed #d1d5db;
+  background: transparent;
+  border-radius: 999px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background: #ffffff;
+  border: 1px solid #c9cacd;
+  color: #374151;
+
+  &::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+  }
+
+  &.active::before {
+    background: #16a34a;
+  }
+
+  &.inactive::before {
+    background: #f59e0b;
+  }
+
+  &.busy::before {
+    background: #2563eb;
+  }
+
+  &.on-leave::before,
+  &.terminated::before {
+    background: #b91c1c;
+  }
+}
+
+.teams {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.team-badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid transparent;
+  white-space: nowrap;
+
+  &.design {
+    color: #7c3aed;
+    background: #f5f3ff;
+    border-color: #ddd6fe;
+  }
+
+  &.product {
+    color: #2563eb;
+    background: #eff6ff;
+    border-color: #bfdbfe;
+  }
+
+  &.marketing {
+    color: #0f766e;
+    background: #ecfeff;
+    border-color: #a5f3fc;
+  }
+
+  &.\+4 {
+    color: #374151;
+    background: #f9fafb;
+    border-color: #e5e7eb;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 14px;
+  color: #6b7280;
+  cursor: pointer;
+
+  svg:hover {
+    color: #111827;
+  }
+}
+
+// pagination
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 4px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #ffffff;
+    font-size: 14px;
+    color: #374151;
+    cursor: pointer;
+
+    &:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    &:hover:not(:disabled) {
+      background: #f9fafb;
+    }
+  }
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  button {
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    justify-content: center;
+  }
+
+  .active {
+    background: #f3f4f6;
+    font-weight: 600;
+    color: #111827;
+  }
+}
+
+// responsive
+@media (max-width: 768px) {
+  .team-table table {
+    min-width: 100%;
+  }
+
+  th,
+  td {
+    padding: 12px;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
