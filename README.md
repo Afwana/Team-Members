@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# Team Members Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive **Team Members Management Dashboard** built with **React, TypeScript, and SCSS**.  
+This project demonstrates real-world frontend patterns including filtering, sorting, pagination, multi-selection, and interactive popups.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## React Compiler
+### Team Members Table
+- Display team members with avatar, name, username, role, email, teams, and status
+- Supports **multiple statuses per user**
+- Clean, Figma-inspired UI
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Selection
+- Checkbox selection for each row
+- Header checkbox to **select / deselect all**
+- Indeterminate state when partially selected
 
-## Expanding the ESLint configuration
+### Search
+- Search by:
+  - Name
+  - Username
+  - Email
+- Case-insensitive
+- Works with filters and sorting
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Sorting
+- Sort by:
+  - Name
+  - Role
+  - Email
+- Toggle ascending / descending order
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Filtering
+- Filter by **Status** (multi-select)
+- Filter by **Teams** (multi-select)
+- Filters combine with search and sorting
+- Fully client-side
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Status Management
+- Each status badge opens a popup
+- Popup auto-positions (top/bottom based on available space)
+- Click outside or scroll to close
+- Multiple statuses selectable per user
+- Local state updates instantly
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Pagination
+- Page-based pagination
+- Auto-updates based on filtered results
+- Previous / Next navigation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Responsive Design
+- Works across desktop, tablet, and mobile
+- Flexible layout with SCSS media queries
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Tech Stack
+
+- **React**
+- **TypeScript**
+- **SCSS**
+- **React Icons**
+- **Vite** (recommended)
+
+---
+
+## Project Structure
+
+src/
+├── components/
+│ ├── Header/
+│ │ ├── Header.tsx
+│ │ └── Header.scss
+│ ├── MemberTable/
+│ │ ├── MemberTable.tsx
+│ │ ├── MemberTable.scss
+│ │ └── MemberData.ts
+├── assets/
+├── App.tsx
+├── main.tsx
+└── index.scss
+
+Install dependencies : npm install
+
+Start development server : npm run dev
